@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil - N.Akilou</title>
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -24,6 +23,14 @@
             max-width: 350px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+
+        /* Marge spéciale pour les écrans mobiles */
+        @media (max-width: 600px) {
+            .card {
+                margin: 20px;
+            }
+        }
+
         .profile-img {
             width: 120px;
             height: 120px;
