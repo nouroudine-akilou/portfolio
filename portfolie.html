@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio N.Akilou</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        
+        .skill-bar {
+            height: 10px;
+            border-radius: 5px;
+            background: #e0e0e0;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #2563eb, #1d4ed8);
+            transition: width 1s ease-in-out;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #9d50bb;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                <div class="w-20 h-15 rounded-full flex items-center justify-center mr-3">
+                     <img src="image/logo nod1.png" alt="">
+                </div>
+            </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Accueil</a>
+                    <a href="#competences" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Compétences</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Portfolio</a>
+                    <a href="#apropos" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">À propos</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-purple-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#accueil" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Accueil</a>
+                <a href="#competences" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Compétences</a>
+                <a href="#portfolio" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Portfolio</a>
+                <a href="#apropos" class="block px-3 py-2 text-gray-700 hover:text-purple-600">À propos</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="accueil" class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Akilou Hamidou Nouroudine</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Développeur Web & Mobile | Maintenance Informatique | Infographie</h2>
+                    <p class="text-lg mb-8">Je crée des solutions numériques innovantes et performantes pour répondre à vos besoins technologiques.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-blue-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300">Me contacter</a>
+                        <a href="#portfolio" class="border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-800 transition duration-300">Voir mon travail</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-purple-200 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <!-- Placeholder for profile image -->
+                            <div class="w-full h-full flex items-center justify-center bg-blue-300">
+                                <img src="image/profil .jpg" alt="">
+                                <!-- <i class="fas fa-user text-blue-700 text-8xl"></i> -->
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white rounded-full p-4 shadow-lg">
+                            <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center">
+                                <i class="fas fa-laptop-code text-white text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Compétences Section -->
+    <section id="competences" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mes Compétences</h2>
+                <div class="w-20 h-1 gradient-bg mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Développement Web & Mobile -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Développement Web & Mobile</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">HTML/CSS/JS</span>
+                                <span class="text-gray-700">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Bootstrapp/Taiwind CSS</span>
+                                <span class="text-gray-700">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">React/laravel</span>
+                                <span class="text-gray-700">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">PHP/java/python</span>
+                                <span class="text-gray-700">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Flutter/Android studio </span>
+                                <span class="text-gray-700">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maintenance Informatique -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Maintenance Informatique</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Dépannage Hardware/Software</span>
+                                <span class="text-gray-700">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Systèmes d'exploitation</span>
+                                <span class="text-gray-700">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Sécurité informatique</span>
+                                <span class="text-gray-700">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <!-- Infographie -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-paint-brush text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Infographie</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Montage vidéo</span>
+                                <span class="text-gray-700">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Illustrator</span>
+                                <span class="text-gray-700">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">UI/UX Design</span>
+                                <span class="text-gray-700">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Figma</span>
+                                <span class="text-gray-700">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mon Portfolio</h2>
+                <div class="w-20 h-1 gradient-bg mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projet 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                    <img src="image/realisation m1.jpg" alt="Installation Windows" class="w-full h-75 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-800 mb-2">Installation Windows 10</h3>
+                        <p class="text-gray-600 mb-4">Installation complète du système d'exploitation et configuration des imprimantes pour une productivité optimale.</p>
+                        <span class="text-blue-600 font-medium flex items-center">Maintenance</span>
+                    </div>
+                </div>
+                <!-- Projet 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Catalogue étuis" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-800 mb-2">Catalogues et Maquettes</h3>
+                        <p class="text-gray-600 mb-4">Conception de catalogues professionnels et maquettes pour étuis avec designs personnalisés.</p>
+                        <span class="text-blue-600 font-medium flex items-center">Infographie</span>
+                    </div>
+                </div>
+                <!-- Projet 3 -->
+                                 <!-- Réalisation 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                    <img src="image/realisation w.png" alt="Plateforme publication" class="w-full h- object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-800 mb-2">Plateforme de Publication</h3>
+                        <p class="text-gray-600 mb-4">Développement d'une plateforme complète de gestion et publication d'actualités.</p>
+                        <span  class="text-blue-600 font-medium flex items-center">Développement Web</span>
+                    </div>
+                    
+                </div>
+                 <!-- Projet 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                    <img src="image/projet_cesam_settat.PNG" alt="Installation Windows" class="w-full h-75 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-800 mb-2">Site web officel de la Cesam Settat</h3>
+                        <p class="text-gray-600 mb-4">Réalisation et Déploiement d'une plateforme digitale moderne et innovante qui répond aux besoins de la communauté.</p>
+                        <span class="text-blue-600 font-medium flex items-center">
+                            <a href="https://cesam-settat.com/" target="_blank" class="inline-block gradient-bg text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300">
+                    Voir le projet
+                </a>
+            </span>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+    <!-- À propos Section -->
+    <section id="apropos" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <div class="relative">
+                        <div class="w-full h-80 bg-gray-200 rounded-xl overflow-hidden">
+                            <!-- Placeholder for about image -->
+                            <div class="w-full h-full flex items-center justify-center bg-blue-100 ">
+                                <img src="image/apropos.png" alt="" class="w-full h-full flex items-center justify-center bg-blue-100">
+                                <!-- <i class="fas fa-user-tie text-blue-600 text-8xl"></i> -->
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-5 -left-5 bg-white p-3 rounded-lg shadow-lg">
+                            <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+                                <i class="fas fa-medal text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">À propos de moi</h2>
+                    <p class="text-gray-600 mb-6">
+                        Je suis Akilou Hamidou Nouroudine, passionné par le numérique et l’innovation.
+                        Mon parcours académique et professionnel reflète mon engagement à créer des solutions technologiques modernes et efficaces.
+                    </p>
+                        <p class="text-gray-600 mb-2">
+                            Baccalauréat en Maintenance Informatique, qui m’a permis d’acquérir de solides compétences en installation, réparation et optimisation des systèmes.
+                        </p>
+                        <p class="text-gray-600 mb-2">
+                            Bac+2 en Développement Digital Full Stack, où j’ai appris à concevoir et développer des applications web complètes, du front-end au back-end.
+                        </p>
+                        <p class="text-gray-600 mb-2">
+                            Licence Professionnelle en Développement Web et Mobile, avec une spécialisation dans la création de plateformes performantes et adaptées aux besoins des utilisateurs.
+                        </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Polyvalent</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Créatif</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Rigoureux</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-gray-700">À l'écoute</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="gradient-bg text-white px-6 py-3 rounded-lg font-medium inline-block hover:opacity-90 transition duration-300">
+                        Discutons de votre projet
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contactez-moi</h2>
+                <div class="w-20 h-1 gradient-bg mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Informations de contact</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Email</h4>
+                                <p class="text-gray-600">akilounouroudine@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Téléphone</h4>
+                                <p class="text-gray-600">+212 751213345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Localisation</h4>
+                                <p class="text-gray-600">Casablanca-Settat Maroc</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-10 mb-6">Réseaux sociaux</h3>
+                       <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/n.akilou/" target="_blank" class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/akilou.nouroudine/" target="_blank" class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nouroudine-akilou-hamidou-a39868267/" target="_blank" class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@n.akilou227" target="_blank" class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@n.akilou" target="_blank" class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                        <i class="fab fa-tiktok text-xl"></i>
+                    </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                <form id="contactForm" action="admin/config.php" method="POST" class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Nom complet</label>
+                        <input type="text" name="name" id="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Votre nom">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                        <input type="email" name="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Votre email">
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+                        <input type="text" name="subject" id="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Sujet de votre message">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                        <textarea name="message" id="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Votre message"></textarea>
+                    </div>
+                    <button type="submit" class="w-full gradient-bg text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 transition duration-300">
+                        Envoyer le message
+                    </button>
+                </form>
+
+                <script>
+                document.getElementById("contactForm").addEventListener("submit", function(e) {
+                    e.preventDefault(); // Empêche l'envoi classique
+
+                    let form = e.target;
+                    let formData = new FormData(form);
+
+                    fetch(form.action, {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        // Popup succès
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Message envoyé !',
+                            text: 'Votre message a été envoyé avec succès ✅',
+                            confirmButtonText: 'OK'
+                        });
+                        form.reset(); // Vide le formulaire
+                    })
+                    .catch(error => {
+                        // Popup erreur
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erreur',
+                            text: "Une erreur s'est produite ❌ Envoyer nous un message sur WhatSapp",
+                            confirmButtonText: 'OK'
+                        });
+                    });
+                });
+                </script>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-xl font-bold">Akilou Hamidou Nouroudine</span>
+                    <p class="text-gray-400 mt-2">Développeur Web & Mobile | Maintenance Informatique | Infographie</p>
+                </div>
+                <div class="flex space-x-6">
+                   
+                    <a href="https://www.instagram.com/n.akilou/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        </i><i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/akilou.nouroudine/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nouroudine-akilou-hamidou-a39868267/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@n.akilou227" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@n.akilou" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-tiktok text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 N.Akilou Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/212751213345" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate skill bars on scroll
+        const animateSkillBars = () => {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            const skillsSection = document.getElementById('competences');
+            const skillsSectionTop = skillsSection.offsetTop;
+            const scrollPosition = window.scrollY + window.innerHeight;
+            
+            if (scrollPosition > skillsSectionTop + 200) {
+                skillBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+                window.removeEventListener('scroll', animateSkillBars);
+            }
+        };
+        
+        window.addEventListener('scroll', animateSkillBars);
+    </script>
+</body>
+</html>

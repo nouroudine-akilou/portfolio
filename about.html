@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - N.Akilou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #1d4ed8, #3b82f6);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            padding: 30px;
+            max-width: 350px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Marge spéciale pour les écrans mobiles */
+        @media (max-width: 600px) {
+            .card {
+                margin: 20px;
+            }
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: -70px;
+            border: 4px solid white;
+        }
+        h2 {
+            margin: 15px 0 5px;
+            font-size: 1.5rem;
+        }
+        p.subtitle {
+            color: gray;
+            margin: 0 0 20px;
+        }
+        .hire-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: auto;
+        }
+        .hire-btn:hover {
+            background: #1e40af;
+        }
+        .description {
+            font-size: 0.95rem;
+            margin-top: 20px;
+            color: #333;
+        }
+        .work {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: gray;
+            margin-top: 20px;
+        }
+        .company {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #111;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: gray;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #2563eb;
+        }
+        .inline{
+            text-decoration: none;
+            color: inherit; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+          @keyframes pulse {
+                    0% {
+                        box-shadow: 0 0 0 0 rgba(37,99,235, 0.7);
+                        transform: scale(1);
+                    }
+                    70% {
+                        box-shadow: 0 0 0 10px rgba(37,99,235, 0);
+                        transform: scale(1.05);
+                    }
+                    100% {
+                        box-shadow: 0 0 0 0 rgba(37,99,235, 0);
+                        transform: scale(1);
+                    }
+                }
+                .animated-btn {
+                    animation: pulse 1.5s infinite;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="image/profil .jpg" alt="N.Akilou" class="profile-img">
+        <h2>N.AKILOU</h2>
+        <p class="subtitle">Student in Morocco</p>
+            <button class="hire-btn animated-btn">
+                <a href="portfolie.html" class="inline">
+                    <i class="fas fa-mouse-pointer"></i> voir mon portfolio
+                </a>
+            </button>
+        <p class="description">
+            Hello, Je suis <strong>Akilou Hamidou Nouroudine</strong>, passionné par la Technologie et l’innovation.
+        </p>
+        <p class="work">SLOGAN</p>
+        <p class="company">Ne rêvez plus, réaliser !</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/nouroudine-akilou-hamidou-a39868267/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.tiktok.com/@n.akilou"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/212751213345"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.youtube.com/@n.akilou227"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/n.akilou/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/akilou.nouroudine/"><i class="fab fa-facebook"></i></a>
+
+        </div>
+    </div>
+
+</body>
+</html>
