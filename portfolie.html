@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio N.Akilou</title>
+    <title>Portfolio | Akilou Hamidou Nouroudine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -296,72 +296,145 @@
         </div>
     </section>
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mon Portfolio</h2>
-                <div class="w-20 h-1 gradient-bg mx-auto"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Projet 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
-                    <img src="image/realisation m1.jpg" alt="Installation Windows" class="w-full h-75 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary-800 mb-2">Installation Windows 10</h3>
-                        <p class="text-gray-600 mb-4">Installation complète du système d'exploitation et configuration des imprimantes pour une productivité optimale.</p>
-                        <span class="text-blue-600 font-medium flex items-center">Maintenance</span>
-                    </div>
-                </div>
-                <!-- Projet 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
-                    <img src="image/info.png" alt="Catalogue étuis" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary-800 mb-2">Catalogues et Maquettes</h3>
-                        <p class="text-gray-600 mb-4">Conception des catalogues professionnels et maquettes pour étuis et étiquettes avec designs personnalisés.</p>
-                        <span class="text-blue-600 font-medium flex items-center">Infographie</span>
-                    </div>
-                </div>
-                <!-- Projet 3 -->
-                                 <!-- Réalisation 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
-                    <img src="image/realisation w.png" alt="Plateforme publication" class="w-full h- object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary-800 mb-2">Plateforme de Publication</h3>
-                        <p class="text-gray-600 mb-4">Développement d'une plateforme complète de gestion et publication d'actualités.</p>
-                        <span  class="text-blue-600 font-medium flex items-center">Développement Web</span>
-                    </div>
-                    
-                </div>
-                 <!-- Projet 4 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
-                    <img src="image/projet_cesam_settat.PNG" alt="Installation Windows" class="w-full h-75 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary-800 mb-2">Site web officel de la Cesam Settat</h3>
-                        <p class="text-gray-600 mb-4">Réalisation et Déploiement d'une plateforme digitale moderne et innovante qui répond aux besoins de la communauté.</p>
-                        <span class="text-blue-600 font-medium flex items-center">
-                            <a href="https://cesam-settat.com/" target="_blank" class="inline-block gradient-bg text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300">
-                    Voir le projet
-                </a>
-            </span>
-                    </div>
-                </div>
-                 <!-- Projet 5 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
-                    <img src="image/todolist.PNG" alt="Todo List" class="w-full h-75 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary-800 mb-2">Todo List</h3>
-                        <p class="text-gray-600 mb-4"> </p>
-                        <span class="text-blue-600 font-medium flex items-center">
-                            <a href="https://nouroudine-akilou.github.io/Todo-List/" target="_blank" class="inline-block gradient-bg text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300">
-                    Voir le projet
-                </a>
-            </span>
-                    </div>
-                </div>
-            </div>
-           
+    <section id="portfolio" class="py-20 bg-slate-50 scroll-mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <span class="text-blue-700 font-semibold text-sm uppercase tracking-widest">Projets & réalisations</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-3 mb-4">Des idées transformées en solutions numériques</h2>
+          <p class="text-slate-600 max-w-2xl mx-auto">Découvrez mes projets de développement, mes applications métier et mes autres réalisations.</p>
         </div>
+        <div class="flex flex-wrap justify-center gap-3 mb-10" role="group" aria-label="Filtrer les réalisations">
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full bg-blue-700 text-white font-medium" data-filter="all" aria-pressed="true">Tous les projets</button>
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full bg-white text-slate-700 border border-slate-200 font-medium" data-filter="web" aria-pressed="false">Développement web</button>
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full bg-white text-slate-700 border border-slate-200 font-medium" data-filter="maintenance" aria-pressed="false">Maintenance</button>
+          <button type="button" class="portfolio-filter px-5 py-2 rounded-full bg-white text-slate-700 border border-slate-200 font-medium" data-filter="design" aria-pressed="false">Infographie</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7" id="portfolio-grid">
+<article class="portfolio-item bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="web">
+  <div class="h-48 bg-gradient-to-br from-blue-700 to-indigo-900 flex items-center justify-center relative overflow-hidden">
+   <i class="fas fa-graduation-cap text-white/80 text-7xl" aria-hidden="true"></i>
+   <span class="absolute top-4 left-4 text-xs font-semibold bg-white/95 text-slate-800 px-3 py-1 rounded-full">Projet en développement</span>
+  </div>
+  <div class="p-6 flex flex-col gap-3">
+   <span class="text-blue-700 text-xs font-bold uppercase tracking-wide">Plateforme universitaire</span>
+   <h3 class="text-xl font-bold text-slate-900">NigerCampus</h3>
+   <p class="text-slate-600 text-sm leading-relaxed min-h-[64px]">Orientation, préinscriptions et consultation des offres de bourses et de leurs conditions.</p>
+   <p class="text-xs text-slate-500">Laravel · PHP · MySQL</p>
+   <div class="pt-3 border-t border-slate-100"><span class="text-slate-500 text-sm">Présentation détaillée bientôt disponible</span></div>
+  </div>
+ </article>
+<article class="portfolio-item bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="web">
+  <div class="h-48 bg-gradient-to-br from-emerald-600 to-teal-900 flex items-center justify-center relative overflow-hidden">
+   <i class="fas fa-money-bill-transfer text-white/80 text-7xl" aria-hidden="true"></i>
+   <span class="absolute top-4 left-4 text-xs font-semibold bg-white/95 text-slate-800 px-3 py-1 rounded-full">Projet applicatif</span>
+  </div>
+  <div class="p-6 flex flex-col gap-3">
+   <span class="text-blue-700 text-xs font-bold uppercase tracking-wide">Application financière</span>
+   <h3 class="text-xl font-bold text-slate-900">Plateforme de transactions</h3>
+   <p class="text-slate-600 text-sm leading-relaxed min-h-[64px]">Gestion des clients, enregistrement et suivi des transactions, frais et volumes d’opérations.</p>
+   <p class="text-xs text-slate-500">Laravel · PHP · MySQL</p>
+   <div class="pt-3 border-t border-slate-100"><span class="text-slate-500 text-sm">Présentation détaillée bientôt disponible</span></div>
+  </div>
+ </article>
+<article class="portfolio-item bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="web">
+  <div class="h-48 bg-gradient-to-br from-violet-700 to-slate-900 flex items-center justify-center relative overflow-hidden">
+   <i class="fas fa-cubes text-white/80 text-7xl" aria-hidden="true"></i>
+   <span class="absolute top-4 left-4 text-xs font-semibold bg-white/95 text-slate-800 px-3 py-1 rounded-full">Projet en développement</span>
+  </div>
+  <div class="p-6 flex flex-col gap-3">
+   <span class="text-blue-700 text-xs font-bold uppercase tracking-wide">Gestion d’entreprise</span>
+   <h3 class="text-xl font-bold text-slate-900">Système ERP SaaS</h3>
+   <p class="text-slate-600 text-sm leading-relaxed min-h-[64px]">Solution de gestion multi-entreprise : achats, ventes, stocks, comptabilité, RH et gestion des accès.</p>
+   <p class="text-xs text-slate-500">Laravel · Bootstrap · MySQL</p>
+   <div class="pt-3 border-t border-slate-100"><span class="text-slate-500 text-sm">Présentation détaillée bientôt disponible</span></div>
+  </div>
+ </article>
+<article class="portfolio-item bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="web">
+  <div class="h-48 bg-gradient-to-br from-sky-600 to-blue-900 flex items-center justify-center relative overflow-hidden">
+   <i class="fas fa-users text-white/80 text-7xl" aria-hidden="true"></i>
+   <span class="absolute top-4 left-4 text-xs font-semibold bg-white/95 text-slate-800 px-3 py-1 rounded-full">Site en ligne</span>
+  </div>
+  <div class="p-6 flex flex-col gap-3">
+   <span class="text-blue-700 text-xs font-bold uppercase tracking-wide">Plateforme associative</span>
+   <h3 class="text-xl font-bold text-slate-900">CESAM Settat</h3>
+   <p class="text-slate-600 text-sm leading-relaxed min-h-[64px]">Conception et déploiement d’une plateforme numérique dédiée à la communauté associative.</p>
+   <p class="text-xs text-slate-500">Développement web</p>
+   <div class="pt-3 border-t border-slate-100"><a href="https://cesam-settat.com/" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-semibold hover:underline">Voir le projet <i class="fas fa-arrow-up-right-from-square ml-1"></i></a></div>
+  </div>
+ </article>
+<article class="portfolio-item bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="web">
+  <div class="h-48 bg-gradient-to-br from-orange-500 to-rose-800 flex items-center justify-center relative overflow-hidden">
+   <i class="fas fa-newspaper text-white/80 text-7xl" aria-hidden="true"></i>
+   <span class="absolute top-4 left-4 text-xs font-semibold bg-white/95 text-slate-800 px-3 py-1 rounded-full">Réalisation web</span>
+  </div>
+  <div class="p-6 flex flex-col gap-3">
+   <span class="text-blue-700 text-xs font-bold uppercase tracking-wide">Application web</span>
+   <h3 class="text-xl font-bold text-slate-900">Plateforme de publication</h3>
+   <p class="text-slate-600 text-sm leading-relaxed min-h-[64px]">Gestion et publication de contenus et d’actualités sur une plateforme dédiée.</p>
+   <p class="text-xs text-slate-500">Développement web</p>
+   <div class="pt-3 border-t border-slate-100"><span class="text-slate-500 text-sm">Présentation détaillée bientôt disponible</span></div>
+  </div>
+ </article>
+<article class="portfolio-item bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="web">
+  <div class="h-48 bg-gradient-to-br from-cyan-600 to-blue-800 flex items-center justify-center relative overflow-hidden">
+   <i class="fas fa-list-check text-white/80 text-7xl" aria-hidden="true"></i>
+   <span class="absolute top-4 left-4 text-xs font-semibold bg-white/95 text-slate-800 px-3 py-1 rounded-full">Démo en ligne</span>
+  </div>
+  <div class="p-6 flex flex-col gap-3">
+   <span class="text-blue-700 text-xs font-bold uppercase tracking-wide">Application de productivité</span>
+   <h3 class="text-xl font-bold text-slate-900">Todo List</h3>
+   <p class="text-slate-600 text-sm leading-relaxed min-h-[64px]">Application simple de gestion des tâches quotidiennes.</p>
+   <p class="text-xs text-slate-500">HTML · CSS · JavaScript</p>
+   <div class="pt-3 border-t border-slate-100"><a href="https://nouroudine-akilou.github.io/Todo-List/" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-semibold hover:underline">Voir le projet <i class="fas fa-arrow-up-right-from-square ml-1"></i></a></div>
+  </div>
+ </article>
+<article class="portfolio-item bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="maintenance">
+  <div class="h-48 bg-gradient-to-br from-slate-600 to-slate-900 flex items-center justify-center relative overflow-hidden">
+   <i class="fas fa-screwdriver-wrench text-white/80 text-7xl" aria-hidden="true"></i>
+   <span class="absolute top-4 left-4 text-xs font-semibold bg-white/95 text-slate-800 px-3 py-1 rounded-full">Intervention technique</span>
+  </div>
+  <div class="p-6 flex flex-col gap-3">
+   <span class="text-blue-700 text-xs font-bold uppercase tracking-wide">Maintenance informatique</span>
+   <h3 class="text-xl font-bold text-slate-900">Installation Windows 10</h3>
+   <p class="text-slate-600 text-sm leading-relaxed min-h-[64px]">Installation et configuration du système et des périphériques informatiques.</p>
+   <p class="text-xs text-slate-500">Maintenance</p>
+   <div class="pt-3 border-t border-slate-100"><span class="text-slate-500 text-sm">Présentation détaillée bientôt disponible</span></div>
+  </div>
+ </article>
+<article class="portfolio-item bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="design">
+  <div class="h-48 bg-gradient-to-br from-pink-600 to-purple-900 flex items-center justify-center relative overflow-hidden">
+   <i class="fas fa-palette text-white/80 text-7xl" aria-hidden="true"></i>
+   <span class="absolute top-4 left-4 text-xs font-semibold bg-white/95 text-slate-800 px-3 py-1 rounded-full">Création graphique</span>
+  </div>
+  <div class="p-6 flex flex-col gap-3">
+   <span class="text-blue-700 text-xs font-bold uppercase tracking-wide">Infographie</span>
+   <h3 class="text-xl font-bold text-slate-900">Catalogues et maquettes</h3>
+   <p class="text-slate-600 text-sm leading-relaxed min-h-[64px]">Conception de catalogues, d’étiquettes et de supports graphiques personnalisés.</p>
+   <p class="text-xs text-slate-500">Design graphique</p>
+   <div class="pt-3 border-t border-slate-100"><span class="text-slate-500 text-sm">Présentation détaillée bientôt disponible</span></div>
+  </div>
+ </article>
+        </div>
+      </div>
     </section>
+    <script>
+      document.querySelectorAll('.portfolio-filter').forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter;
+          document.querySelectorAll('.portfolio-filter').forEach(b => {
+            const active = b === button;
+            b.setAttribute('aria-pressed', String(active));
+            b.classList.toggle('bg-blue-700', active);
+            b.classList.toggle('text-white', active);
+            b.classList.toggle('bg-white', !active);
+            b.classList.toggle('text-slate-700', !active);
+          });
+          document.querySelectorAll('.portfolio-item').forEach(card => {
+            card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
+          });
+        });
+      });
+    </script>
     <!-- À propos Section -->
     <section id="apropos" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
